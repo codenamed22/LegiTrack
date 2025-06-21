@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegiTrack Daily Report - 2025-06-21</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .header .date {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+        .content {
+            padding: 30px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            color: #333;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .source-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .source-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .source-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .updates-list {
+            list-style: none;
+            padding: 0;
+        }
+        .update-item {
+            background: white;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .update-item.error {
+            border-left-color: #dc3545;
+        }
+        .update-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .update-source {
+            font-weight: bold;
+            color: #667eea;
+        }
+        .update-time {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .update-title {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .update-summary {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .update-link {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .update-link:hover {
+            text-decoration: underline;
+        }
+        .error-detail {
+            color: #dc3545;
+            font-style: italic;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #dee2e6;
+        }
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .source-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>LegiTrack Daily Report</h1>
+            <div class="date">2025-06-21</div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Total Updates</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Successful</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1</div>
+                <div class="stat-label">Failed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Sources</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>Source Statistics</h2>
+                <div class="source-stats">
+                    
+                    <div class="source-card">
+                        <div class="source-name">httpbin_test</div>
+                        <div>Total: 1</div>
+                        <div>Successful: 1</div>
+                        <div>Failed: 0</div>
+                    </div>
+                    
+                    <div class="source-card">
+                        <div class="source-name">indian_gazette</div>
+                        <div>Total: 1</div>
+                        <div>Successful: 1</div>
+                        <div>Failed: 0</div>
+                    </div>
+                    
+                    <div class="source-card">
+                        <div class="source-name">law_ministry</div>
+                        <div>Total: 1</div>
+                        <div>Successful: 1</div>
+                        <div>Failed: 0</div>
+                    </div>
+                    
+                    <div class="source-card">
+                        <div class="source-name">rbi_regulations</div>
+                        <div>Total: 1</div>
+                        <div>Successful: 1</div>
+                        <div>Failed: 0</div>
+                    </div>
+                    
+                    <div class="source-card">
+                        <div class="source-name">sebi_updates</div>
+                        <div>Total: 1</div>
+                        <div>Successful: 1</div>
+                        <div>Failed: 0</div>
+                    </div>
+                    
+                    <div class="source-card">
+                        <div class="source-name">supreme_court_india</div>
+                        <div>Total: 1</div>
+                        <div>Successful: 0</div>
+                        <div>Failed: 1</div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Updates</h2>
+                
+                <ul class="updates-list">
+                    
+                    <li class="update-item ">
+                        <div class="update-header">
+                            <span class="update-source">httpbin_test</span>
+                            <span class="update-time">16:56:34</span>
+                        </div>
+                        
+                        
+                        <div>
+                            <a href="https://httpbin.org/html" class="update-link" target="_blank">View Original</a>
+                            
+                            <span style="margin-left: 10px; color: #666;">Hash: 3f324f9914742e62cf082861ba03b207282dba781c3349bee9d7c1b5ef8e0bfe</span>
+                            
+                        </div>
+                        
+                    </li>
+                    
+                    <li class="update-item ">
+                        <div class="update-header">
+                            <span class="update-source">law_ministry</span>
+                            <span class="update-time">16:56:34</span>
+                        </div>
+                        
+                        
+                        <div>
+                            <a href="https://lawmin.gov.in/" class="update-link" target="_blank">View Original</a>
+                            
+                            <span style="margin-left: 10px; color: #666;">Hash: 26f8b649688695064497ba9aa0ea19c612d8c421a27595d6340967bdd221ef96</span>
+                            
+                        </div>
+                        
+                    </li>
+                    
+                    <li class="update-item ">
+                        <div class="update-header">
+                            <span class="update-source">indian_gazette</span>
+                            <span class="update-time">16:56:34</span>
+                        </div>
+                        
+                        
+                        <div>
+                            <a href="https://egazette.gov.in/" class="update-link" target="_blank">View Original</a>
+                            
+                            <span style="margin-left: 10px; color: #666;">Hash: 3de7c6ae8cc552b79536f34532c32b5e32a9711827d4211cf4ca6b6cc113115e</span>
+                            
+                        </div>
+                        
+                    </li>
+                    
+                    <li class="update-item ">
+                        <div class="update-header">
+                            <span class="update-source">sebi_updates</span>
+                            <span class="update-time">16:56:34</span>
+                        </div>
+                        
+                        
+                        <div>
+                            <a href="https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&amp;sid=1&amp;ssid=1&amp;smid=1" class="update-link" target="_blank">View Original</a>
+                            
+                            <span style="margin-left: 10px; color: #666;">Hash: 2beaf5103bd31becf5e1b476bad433e0baa6a16d87b0fba6ada762a66f4ccba0</span>
+                            
+                        </div>
+                        
+                    </li>
+                    
+                    <li class="update-item error">
+                        <div class="update-header">
+                            <span class="update-source">supreme_court_india</span>
+                            <span class="update-time">16:56:33</span>
+                        </div>
+                        
+                        
+                        <div>
+                            <a href="https://main.sci.gov.in/" class="update-link" target="_blank">View Original</a>
+                            
+                        </div>
+                        
+                        <div class="error-detail">Error: Browser scraping not implemented yet</div>
+                        
+                    </li>
+                    
+                    <li class="update-item ">
+                        <div class="update-header">
+                            <span class="update-source">rbi_regulations</span>
+                            <span class="update-time">16:56:33</span>
+                        </div>
+                        
+                        
+                        <div>
+                            <a href="https://www.rbi.org.in/scripts/BS_ViewMasCirculardisplay.aspx" class="update-link" target="_blank">View Original</a>
+                            
+                            <span style="margin-left: 10px; color: #666;">Hash: 838928841dd72a2ad9bbf3df972c1707fc230d94dc08d72748fbb3408f9ce49c</span>
+                            
+                        </div>
+                        
+                    </li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Generated by LegiTrack on 2025-06-21 at 22:27:04</p>
+        </div>
+    </div>
+</body>
+</html>

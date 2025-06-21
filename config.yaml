@@ -1,0 +1,117 @@
+# LegiTrack Configuration
+# Legal Compliance Website Monitor
+
+# Global settings
+global:
+  # Default timeout for HTTP requests
+  default_timeout: 30s
+  # Default number of retries for failed requests
+  default_max_retries: 3
+  # User agent string
+  user_agent: "LegiTrack-Bot/1.0 (Legal Compliance Monitor)"
+
+# Legal compliance websites to monitor
+sources:
+  # Indian Government Gazette (Official legal notifications)
+  indian_gazette:
+    id: "indian_gazette"
+    name: "Indian Government Gazette"
+    url: "https://egazette.gov.in/"
+    description: "Official legal notifications and government orders"
+    cron: "0 0 */2 * * *"  # Every 2 hours
+    js_rendered: false
+    max_retries: 5
+    timeout: 60s
+    category: "government_official"
+    
+  # Supreme Court of India
+  supreme_court_india:
+    id: "supreme_court_india"
+    name: "Supreme Court of India"
+    url: "https://main.sci.gov.in/"
+    description: "Latest judgments and legal updates from Supreme Court"
+    cron: "0 0 */4 * * *"  # Every 4 hours
+    js_rendered: true
+    max_retries: 3
+    timeout: 45s
+    category: "judiciary"
+    
+  # Ministry of Law and Justice
+  law_ministry:
+    id: "law_ministry"
+    name: "Ministry of Law and Justice"
+    url: "https://lawmin.gov.in/"
+    description: "Legal policy updates and legislative changes"
+    cron: "0 0 */6 * * *"  # Every 6 hours
+    js_rendered: false
+    max_retries: 3
+    timeout: 30s
+    category: "government_official"
+    
+  # RBI (Reserve Bank of India) - Banking Regulations
+  rbi_regulations:
+    id: "rbi_regulations"
+    name: "RBI Banking Regulations"
+    url: "https://www.rbi.org.in/scripts/BS_ViewMasCirculardisplay.aspx"
+    description: "Banking and financial sector regulatory updates"
+    cron: "0 0 */3 * * *"  # Every 3 hours
+    js_rendered: false
+    max_retries: 4
+    timeout: 45s
+    category: "financial_regulations"
+    
+  # SEBI (Securities and Exchange Board of India)
+  sebi_updates:
+    id: "sebi_updates"
+    name: "SEBI Regulatory Updates"
+    url: "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=1&ssid=1&smid=1"
+    description: "Securities market regulations and compliance updates"
+    cron: "0 0 */4 * * *"  # Every 4 hours
+    js_rendered: false
+    max_retries: 3
+    timeout: 40s
+    category: "financial_regulations"
+
+# Test sources (for development)
+test_sources:
+  httpbin_test:
+    id: "httpbin_test"
+    name: "HTTPBin Test"
+    url: "https://httpbin.org/html"
+    description: "Test source for development"
+    cron: "*/30 * * * * *"  # Every 30 seconds (for testing)
+    js_rendered: false
+    max_retries: 2
+    timeout: 10s
+    category: "test"
+
+# Notification settings (for future use)
+notifications:
+  email:
+    enabled: false
+    smtp_server: ""
+    smtp_port: 587
+    username: ""
+    password: ""
+    recipients: []
+  
+  webhook:
+    enabled: false
+    url: ""
+    secret: ""
+
+# Storage settings
+storage:
+  database_path: "./legitrack.db"
+  backup_enabled: true
+  backup_interval: "24h"
+  max_retention_days: 90
+
+# Reporting settings
+reporting:
+  enabled: true
+  output_directory: "./reports"
+  daily_report_time: "23:59"
+  auto_generate: true
+  include_summaries: true
+  include_errors: true 
